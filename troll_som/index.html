@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>somutaeng</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      background-color: cyan;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .btn {
+      background-color: #3f51b5;
+      color: white;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #303f9f;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="clickBtn" class="btn">
+    <span id="btnLabel">여기 눌러 이솜탱</span>
+  </button>
+
+  <script>
+    let times = 0;
+
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      const label = document.getElementById("btnLabel");
+      const button = document.getElementById("clickBtn");
+
+      if (times === 0) {
+        label.textContent = "한번 더 ㅋ";
+      } else if (times === 1) {
+        label.textContent = "이것 밖에 안돼?";
+      } else if (times === 2) {
+        label.textContent = "아주 그냥 볼 커가지구 한 번 더";
+      } else if (times === 3) {
+        label.textContent = "한 버 언 더";
+      } else if (times === 4) {
+        label.textContent = "화이팅";
+      } else if (times === 5) {
+        button.style.visibility = "hidden";
+        const go = confirm("사랑해 소미나"); // 여기 문구 자유 수정
+        if (go) {
+          window.location.href = "https://www.youtube.com/watch?v=94jQeq3yAb4&list=RD94jQeq3yAb4&start_radio=1"; // 유튜브 링크 변경 가능
+        } else {
+          window.location.href = "https://www.youtube.com/watch?v=94jQeq3yAb4&list=RD94jQeq3yAb4&start_radio=1"; // 유튜브 링크 변경 가능
+        }
+      }
+
+      times++;
+    });
+  </script>
+</body>
+</html>
